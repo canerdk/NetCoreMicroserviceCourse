@@ -18,7 +18,7 @@ namespace Catalog.API.Entities
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime CreatedTime { get; set; }
         [BsonRepresentation(BsonType.ObjectId)]
-        public string CategorId { get; set; }
+        public string CategoryId { get; set; }
         public Feature Feature { get; set; }
 
         [BsonIgnore]
