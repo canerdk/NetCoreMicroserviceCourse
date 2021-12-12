@@ -20,7 +20,7 @@ namespace Catalog.API.Services.Concrete
 
         public CourseService(IMapper mapper, IDatabaseSettings databaseSettings)
         {
-            var client = new MongoClient(databaseSettings.DatabaseName);
+            var client = new MongoClient(databaseSettings.ConnectionString);
             var database = client.GetDatabase(databaseSettings.DatabaseName);
             _courseCollection = database.GetCollection<Course>(databaseSettings.CourseCollectionName);
             _categoryCollection = database.GetCollection<Category>(databaseSettings.CategoryCollectionName);

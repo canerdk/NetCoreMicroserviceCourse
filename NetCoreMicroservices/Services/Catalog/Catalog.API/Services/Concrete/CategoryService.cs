@@ -16,7 +16,7 @@ namespace Catalog.API.Services
 
         public CategoryService(IMapper mapper, IDatabaseSettings databaseSettings)
         {
-            var client = new MongoClient(databaseSettings.DatabaseName);
+            var client = new MongoClient(databaseSettings.ConnectionString);
             var database = client.GetDatabase(databaseSettings.DatabaseName);
             _categoryCollection = database.GetCollection<Category>(databaseSettings.CategoryCollectionName);
             _mapper = mapper;
